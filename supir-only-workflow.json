@@ -2,7 +2,7 @@
   "id": "f897d36c-5c46-4ed4-875b-1b2e254835a1",
   "revision": 0,
   "last_node_id": 188,
-  "last_link_id": 182,
+  "last_link_id": 183,
   "nodes": [
     {
       "id": 17,
@@ -137,9 +137,6 @@
           "label": " ",
           "name": "",
           "type": "*",
-          "widget": {
-            "name": "value"
-          },
           "link": 182
         }
       ],
@@ -350,9 +347,6 @@
           "label": " ",
           "name": "",
           "type": "*",
-          "widget": {
-            "name": "value"
-          },
           "link": 146
         }
       ],
@@ -364,7 +358,7 @@
           "type": "STRING",
           "slot_index": 0,
           "links": [
-            147
+            183
           ]
         }
       ],
@@ -715,31 +709,6 @@
       "bgcolor": "#535"
     },
     {
-      "id": 167,
-      "type": "Note",
-      "pos": [
-        430,
-        -115
-      ],
-      "size": [
-        350,
-        145
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "you do not need to use the same model that was used to create your raw image. it can be a different one. Photorealistic based models tend to work the best."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 125,
       "type": "Note",
       "pos": [
@@ -751,7 +720,7 @@
         160
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -761,32 +730,6 @@
       },
       "widgets_values": [
         "for images with a lot of compression artefacts, use supir-v0Q, \n\nfor lightly degraded images it's better to use supir-v0F\n\n\n\n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 56,
-      "type": "Note",
-      "pos": [
-        1130,
-        -115
-      ],
-      "size": [
-        480,
-        160
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "SUPIR Sampler Notes",
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "Keep CFG low: 0.1-3.0 tends to be good - higher if you need bigger changes.\n\n\nIf you get the error:\n\n\"The size of tensor a (48) must match the size of tensor b (128) at non-singleton dimension 3.....\" -- Make sure you haven't unintentionally selected a Tiled Sampler \n\nTurn off keep_model_loaded if low on vram."
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -805,7 +748,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 8,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -838,7 +781,7 @@
         385
       ],
       "flags": {},
-      "order": 9,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -881,7 +824,7 @@
         100
       ],
       "flags": {},
-      "order": 10,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -929,7 +872,7 @@
         106
       ],
       "flags": {},
-      "order": 11,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -973,7 +916,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 12,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1119,9 +1062,6 @@
           "label": " ",
           "name": "",
           "type": "*",
-          "widget": {
-            "name": "value"
-          },
           "link": 150
         }
       ],
@@ -1161,7 +1101,7 @@
         106
       ],
       "flags": {},
-      "order": 13,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1253,7 +1193,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 14,
+      "order": 12,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1282,13 +1222,13 @@
         790
       ],
       "size": [
-        210,
+        220.11581420898438,
         58
       ],
       "flags": {
         "collapsed": true
       },
-      "order": 15,
+      "order": 13,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1350,69 +1290,6 @@
         2,
         2048,
         2048
-      ]
-    },
-    {
-      "id": 11,
-      "type": "SUPIR_first_stage",
-      "pos": [
-        1230,
-        570
-      ],
-      "size": [
-        287.20001220703125,
-        170
-      ],
-      "flags": {},
-      "order": 30,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "SUPIR_VAE",
-          "type": "SUPIRVAE",
-          "link": 175
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 153
-        }
-      ],
-      "outputs": [
-        {
-          "name": "SUPIR_VAE",
-          "type": "SUPIRVAE",
-          "slot_index": 0,
-          "links": [
-            14
-          ]
-        },
-        {
-          "name": "denoised_image",
-          "type": "IMAGE",
-          "slot_index": 1,
-          "links": [
-            15
-          ]
-        },
-        {
-          "name": "denoised_latents",
-          "type": "LATENT",
-          "slot_index": 2,
-          "links": []
-        }
-      ],
-      "title": "SUPIR 1st Stage",
-      "properties": {
-        "cnr_id": "comfyui-supir",
-        "ver": "29f2e8be0e9c32197ab6cf3a79a8c5776867d8f0",
-        "Node name for S&R": "SUPIR_first_stage"
-      },
-      "widgets_values": [
-        true,
-        1024,
-        1024,
-        "auto"
       ]
     },
     {
@@ -1483,75 +1360,6 @@
       ]
     },
     {
-      "id": 13,
-      "type": "SUPIR_conditioner",
-      "pos": [
-        1480,
-        390
-      ],
-      "size": [
-        255,
-        182
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 35,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "SUPIR_model",
-          "type": "SUPIRMODEL",
-          "link": 46
-        },
-        {
-          "name": "latents",
-          "type": "LATENT",
-          "link": 33
-        },
-        {
-          "name": "captions",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        },
-        {
-          "name": "positive_prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "positive_prompt"
-          },
-          "link": 147
-        }
-      ],
-      "outputs": [
-        {
-          "name": "positive",
-          "type": "SUPIR_cond_pos",
-          "links": [
-            9
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "SUPIR_cond_neg",
-          "slot_index": 1,
-          "links": [
-            10
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-supir",
-        "ver": "29f2e8be0e9c32197ab6cf3a79a8c5776867d8f0",
-        "Node name for S&R": "SUPIR_conditioner"
-      },
-      "widgets_values": [
-        "The image depicts a bustling street scene in an Asian city. The perspective is from a low angle, looking up at a store with a vibrant pink awning and a sign that reads \"KODAK\". The store is filled with various items, including a large stack of boxes and a large TV screen. The street is wet from rain, with a solitary figure walking on the sidewalk in the foreground. The background is a blur of neon signs and buildings, creating a sense of depth and movement., silhoutte of a man",
-        ""
-      ]
-    },
-    {
       "id": 183,
       "type": "CLIPLoader",
       "pos": [
@@ -1563,7 +1371,7 @@
         106
       ],
       "flags": {},
-      "order": 16,
+      "order": 14,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1601,7 +1409,7 @@
         180
       ],
       "flags": {},
-      "order": 17,
+      "order": 15,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1637,7 +1445,7 @@
       "flags": {
         "allow_interaction": true
       },
-      "order": 18,
+      "order": 16,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -1653,6 +1461,185 @@
       },
       "color": "#fff0",
       "bgcolor": "#fff0"
+    },
+    {
+      "id": 13,
+      "type": "SUPIR_conditioner",
+      "pos": [
+        1490,
+        390
+      ],
+      "size": [
+        260,
+        350
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "SUPIR_model",
+          "type": "SUPIRMODEL",
+          "link": 46
+        },
+        {
+          "name": "latents",
+          "type": "LATENT",
+          "link": 33
+        },
+        {
+          "name": "captions",
+          "shape": 7,
+          "type": "STRING",
+          "link": 183
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "SUPIR_cond_pos",
+          "links": [
+            9
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "SUPIR_cond_neg",
+          "slot_index": 1,
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-supir",
+        "ver": "29f2e8be0e9c32197ab6cf3a79a8c5776867d8f0",
+        "Node name for S&R": "SUPIR_conditioner"
+      },
+      "widgets_values": [
+        "Cinematic, High Contrast, highly detailed, taken using a Canon EOS R camera, hyper detailed photo - realistic maximum detail, 32k, Color Grading, ultra HD, extreme meticulous detailing, skin pore detailing, hyper sharpness, perfect without deformations",
+        "painting, oil painting, illustration, drawing, art, sketch, oil painting, cartoon, CG Style, 3D render, unreal engine, blurring, dirty, messy, worst quality, low quality, frames, watermark, signature, jpeg artifacts, deformed, lowres, over-smooth"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 11,
+      "type": "SUPIR_first_stage",
+      "pos": [
+        1200,
+        570
+      ],
+      "size": [
+        287.20001220703125,
+        170
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "SUPIR_VAE",
+          "type": "SUPIRVAE",
+          "link": 175
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 153
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SUPIR_VAE",
+          "type": "SUPIRVAE",
+          "slot_index": 0,
+          "links": [
+            14
+          ]
+        },
+        {
+          "name": "denoised_image",
+          "type": "IMAGE",
+          "slot_index": 1,
+          "links": [
+            15
+          ]
+        },
+        {
+          "name": "denoised_latents",
+          "type": "LATENT",
+          "slot_index": 2,
+          "links": []
+        }
+      ],
+      "title": "SUPIR 1st Stage",
+      "properties": {
+        "cnr_id": "comfyui-supir",
+        "ver": "29f2e8be0e9c32197ab6cf3a79a8c5776867d8f0",
+        "Node name for S&R": "SUPIR_first_stage"
+      },
+      "widgets_values": [
+        true,
+        1024,
+        1024,
+        "auto"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 167,
+      "type": "Note",
+      "pos": [
+        430,
+        -115
+      ],
+      "size": [
+        350,
+        145
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "you do not need to use the same model that was used to create your raw image. it can be a different one. Photorealistic based models tend to work the best.\n\nConnect your primary caption for the image to captions in the Conditioner Node.  the other pos. prompt gets appended to the primary caption.  the neg. prompt is used as is.  you can tweak it or keep those the same"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 56,
+      "type": "Note",
+      "pos": [
+        1130,
+        -115
+      ],
+      "size": [
+        480,
+        160
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "SUPIR Sampler Notes",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Keep CFG low: 0.1-3.0 tends to be good - higher if you need bigger changes. I tend to use a scale of 2.0 to 4.0 as a starting point. \n\n\nIf you get the error:\n\n\"The size of tensor a (48) must match the size of tensor b (128) at non-singleton dimension 3.....\" -- Make sure you haven't unintentionally selected a Tiled Sampler \n\nTurn off keep_model_loaded if low on vram."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -1809,14 +1796,6 @@
       "*"
     ],
     [
-      147,
-      158,
-      0,
-      13,
-      3,
-      "STRING"
-    ],
-    [
       150,
       159,
       0,
@@ -1927,6 +1906,14 @@
       159,
       0,
       "*"
+    ],
+    [
+      183,
+      158,
+      0,
+      13,
+      2,
+      "STRING"
     ]
   ],
   "groups": [
@@ -1988,16 +1975,16 @@
     "ds": {
       "scale": 0.6209213230591556,
       "offset": [
-        910.1920108768905,
-        430.4345673085322
+        -416.4348763106078,
+        332.3484228376517
       ]
     },
+    "frontendVersion": "1.18.9",
     "0246.VERSION": [
       0,
       0,
       4
     ],
-    "frontendVersion": "1.17.11",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
